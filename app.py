@@ -7,8 +7,8 @@ import requests
 from flask import Flask, render_template
 
 # ── Innstillinger ───────────────────────────────────────────────
-TEACHER_URL = "http://192.168.1.1:5000/data"   # ← IP-adressen du får av læreren. Husk port 5000 og /data til slutt, og http:// foran!
-NAME = "Ola Nordmann"                          # ← ditt eget navn
+TEACHER_URL = "http://10.2.0.58:5000/data"   # ← IP-adressen du får av læreren. Husk port 5000 og /data til slutt, og http:// foran!
+NAME = "Mohamed"                          # ← ditt eget navn
 SEND_INTERVAL = 30                             # Antall sekunder mellom hver sending. Denne kan godt stå på 30.
 # ──────────────────────────────────────────────────────────────────────────────
 
@@ -42,9 +42,9 @@ def get_status():
         "name":     NAME,
         "hostname": socket.gethostname(),
         "ip":       ip,
-        "cpu":      psutil.cpu_percent(interval=1),   # CPU-bruk i prosent
-        "ram":      psutil.virtual_memory().percent,  # RAM-bruk i prosent
-        "disk":     psutil.disk_usage("/").percent,   # Diskbruk i prosent
+        "cpu":      psutil.cpu_percent(interval=1)*100,   # CPU-bruk i prosent
+        "ram":      psutil.virtual_memory().percent*100,  # RAM-bruk i prosent
+        "disk":     psutil.disk_usage("/").percent*100,   # Diskbruk i prosent
         "uptime":   f"{hours}h {minutes}m",
     }
 
