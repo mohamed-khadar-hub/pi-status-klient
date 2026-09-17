@@ -50,3 +50,4 @@ python app.py
 | Får ikke åpnet `localhost:8080` | Kjører `python app.py`? Står det (venv) i terminalen? |
 | `externally-managed-environment` ved `pip install` | Du glemte `source venv/bin/activate` |
 | Andre får ikke sett nettsiden min. | Port 8080 er blokkert i brannmuren. Prøv `sudo ufw allow 8080` |
+https://trello.com/b/WS6EeO42/trello-tavlen-min
